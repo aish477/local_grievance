@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+ <style>
+       body{
+            background-image: url();
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            }
+         #camp{
+                height: fit-content;
+                width: fit-content;
+                border: 2px solid rgb(32, 33, 33);padding: 60px 40px;margin-top:90px;margin-bottom: 90px;-webkit-box-shadow: 4px 2px 37px 10px rgba(32,33,33);
+-moz-box-shadow: 4px 2px 37px 10px rgba(32,33,33);
+box-shadow: 4px 2px 37px 10px rgba(32,33,33);}
+         .thumb{width :70%; float: left; height:300px ;margin-top:50px; -webkit-box-shadow: 3px 3px 33px 9px rgba(32,33,33);
+-moz-box-shadow: 3px 3px 33px 9px rgba(32,33,33);
+box-shadow: 3px 3px 33px 9px rgba(32,33,33);
+}
+              
+          #user{
+                 margin-top: 100px;
+                 padding-top: 10px;
+               }
+           #dept{
+                margin-top: 100px;
+                padding-top: 1px;
+                }
+           .form{
+                margin-left: 500px;
+                margin-right: 500px;
+           }
+           p{
+             margin-block-start:5px ;
+           }
+           h3{
+             color: white;
+             font-weight: bolder;
+             font-style: oblique;
+           }
+           .footer{
+                  position: fixed;
+                  left: 0;
+                  bottom: 0;
+                  width: 100%;
+                  background-color:rgb(32, 33, 33);
+                  color: white;
+                  text-align: center;
+                }
+                
+                select {
+    padding: 8px;
+    width: 180px;
+    border-radius: 4px;
+
+}
+
+input {
+    padding: 8px;
+    border-radius: 4px;
+}
+  </style>
+ <head>
+         
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+         <link rel="stylesheet" href="userreg.css"/>
+         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+         <link rel="stylesheet" href="css/bootstrap.min.css">
+         <title>Local Grievance|Registration</title>
+ </head>
+  <body style="width: 100%;">
+<nav class="navbar navbar-expand-lg navbar fixed-top " style="background-color: rgb(223, 100, 18);">
+  <div class="container-fluid navigation">
+    <div class="navbar-header">
+      <img src="../images/logo.jpeg" class="rounded" alt="Cinque Terre" style="width: 10%;height:10%;">
+      <a class="navbar-brand " style="color:white; margin-left: 40px; font-weight:200;font-style: oblique;" href="#">Local Grievance Portal
+      <h6 style=" color:rgb(18, 121, 14) ; font-style: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
+    </div>
+    <ul class="nav nav-tab">
+      <li class="nav-item"><a href="/adminpage" class="nav-link" style="color: white;">Back</a> </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xm-12"></div>
+    <div class="col-md-4 col-sm-4 col-xm-12">
+     <section id="dept" >
+        <form method="POST" id="camp" action="/departmentsignup" autocomplete="off" enctype="multipart/form-data">
+        <!--Nextpage-->
+       <fieldset class="writers" >
+       <h3 style="color:rgb(223, 100, 18);font-family: fantasy;font-weight: 900;">  Department Registeration</h3><hr/>
+       <div class="form-group" style="margin-top: 4px;">
+        <p>
+          <label>Department Name:</label> <br>
+          <select name="dname" value="<%= user.dname%>" >
+          <option>....Select....</option>
+          <option> GRAMPANCHAYATA AWASARI(KH)</option>
+          <option>GRAMPANCHAYATA MANCHAR</option>
+          <option> MANCHAR POLICE STATION</option>
+          <option> PRATHAMIK AROGYAKENDRA AWASARI(KH)</option>
+          </select>
+          <% if(errors.dname){%>
+            <p style="color: red;">
+                <%= errors.dname.msg%>
+            </p>
+            <%}%>
+  
+       </p><br>
+        </div>
+
+
+          
+             <p>
+                 <label>Head of Department:</label><br>
+                 <input name="hname" placeholder="Enter department head" type="text"  value="<%= user.hname%>"/><br/>
+                 <% if(errors.hname){%>
+                  <p style="color: red;">
+                      <%= errors.hname.msg%>
+                  </p>
+                  <%}%>
+        
+                  </p><br/>
+             <p>
+                 <label>Email:</label><br>
+                 <input name="demail" placeholder="Enter E-Mail Id" type="email"  value="<%= user.demail%>"><br/>
+                 <% if(errors.demail){%>
+                  <p style="color: red;">
+                      <%= errors.demail.msg%>
+                  </p>
+                  <%}%>
+        
+                </p><br/>
+             <p>
+                 <label>Mobile Number:</label><br>
+                 <input name="dmobileno" type="tel"placeholder="Enter Mobile No" value="<%= user.dmobileno%>"><br/>
+                 <% if(errors.dmobileno){%>
+                  <p style="color: red;">
+                      <%= errors.dmobileno.msg%>
+                  </p>
+                  <%}%>
+        
+               </p><br/>
+             <p>
+               <label>Telephone No:</label><br>
+               <input name="dphoneno" type="tel"placeholder="Enter Mobile No" value="<%= user.dmobileno%>"><br/>
+               <% if(errors.dphoneno){%>
+                <p style="color: red;">
+                    <%= errors.dphoneno.msg%>
+                </p>
+                <%}%>
+      
+              </p><br/>
+              <p>
+              <label>Description:</label><br>
+              <textarea name="desc" rows="5" cols="30" wrap="hard" value="<%= user.desc%>"></textarea><br/>
+              <% if(errors.desc){%>
+                <p style="color: red;">
+                    <%= errors.desc.msg%>
+                </p>
+                <%}%>
+      
+               </p><br/>
+               
+              <p>
+              <label>Password</label><br>
+              <input name="dpassword" placeholder="Enter Password" type="password"  value="<%= user.dpassword%>"><br/>
+              <% if(errors.dpassword){%>
+                <p style="color: red;">
+                    <%= errors.dpassword.msg%>
+                </p>
+                <%}%>
+      
+             
+              </p><br/>
+              <p>
+             <label>Confirm your password</label><br>
+             <input name="dcpass" placeholder="Renter Password" type="password"  value="<%= user.dcpass%>"><br/>
+             <% if(errors.dcpass){%>
+              <p style="color: red;">
+                  <%= errors.dcpass.msg%>
+              </p>
+              <%}%>
+    
+            </p><br/>
+            
+             
+            <button type="submit" class="btn btn-danger btn-lg" style="margin-right: 10px; background-color:rgb(223, 100, 18);" href="/adminpage">Submit</button>
+      
+            </label></br>
+            </fieldset>
+            </form>
+           </div>
+  </div>
+</div>
+</div>
+       </section>
+       <div class="footer">
+        <span>Follow Us: </span>
+                         <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                         </a>
+                         <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                         </a>
+                         <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
+                         <a href="aboutus.html"><p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+     </div>    <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+    </div>
+    <div class="container-fluid">
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+        <style>
+                body 
+                {
+                  background-image: url();
+                  background-repeat: no-repeat;
+                  background-attachment: fixed;
+                  background-size: 100% 100%;
+                  height: 1230px;
+                  
+                }
+                .a { padding-left: 20px;
+                
+
+                }
+                .thumb{width :70%; float: left; height:fit-content ;margin-top:50px; 
+                }
+                .b{
+                  font-size: 20px;
+                
+                  
+                }
+              
+                .footer{
+                  position:fixed;
+                  left: 0;
+                  bottom: 0;
+                  width: 100%;
+                  background-color:rgb(32, 33,33); 
+                  color: white;
+                  text-align: center;
+                }
+                @media screen and (min-width: 2000px) {
+  div.txt {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  div.txt {
+    font-size: 30px;
+  }
+}
+                             
+          </style>
+<head>
+  
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <title>Local Grievances | Application</title>
+</head>
+<body >
+    
+         
+<nav class="navbar navbar-expand-lg navbar fixed-top " style="background-color: rgb(223, 100, 18);">
+  <div class="container-fluid navigation">
+    <div class="navbar-header">
+      <img src="../images/logo.jpeg" class="rounded" alt="Cinque Terre" style="width: 10%;height:10%;">
+      <a class="navbar-brand " style="color:white; margin-left: 40px; font-weight:200;font-style: oblique;" href="#">Local Grievance Portal 
+      <h6 style=" color:black ; font-style: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
+    </div>
+    <ul class="nav nav-tab">
+      <li class="nav-item"><a href="/departmentpage" class="nav-link" style="color: white;">Back</a> </li>
+             
+    </ul>
+  </div>
+</nav> 
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xm-12"></div>
+    <div class="col-md-4 col-sm-4 col-xm-12">
+       <form  id="compform"  method="POST" action="/application"  autocomplete="off" style="margin-top:150px; border:2px solid grey; margin-bottom: 20px;">
+       <input type="hidden" name="id"value="<%= record._id %>">
+         <h1 style="margin-bottom: 40px; text-align: center;">Application</h1>
+           <div class="form-group a">
+             <p class="b"  >Department:  <%= record.cdepartname %></p >
+            </div>
+             <div class="form-group a">
+               <p class="b" >Name:  <%= record.cname %></p> 
+            </div>
+            <div class="form-group a">
+                <p class="b">Adhar No:  <%= record.adhar %></p>
+            </div>
+            
+            <div class="form-group a">
+               <p class="b">contact:  <%= record.contact %></p>
+
+            </div>
+            <div class="form-group a">
+                <p class="b">Email address:  <%= record.cemail %></p>
+              
+            </div>
+           
+            <div class="form-group a">
+              <p class="b" >Address(Residential):  <%= record.caddr %></p>
+               
+              </div>
+              
+                  <div class="form-group a">
+                      <p class="b">Locality:  <%= record.clocality %></p>
+                      </div>
+                      <div class="form-group a">
+                          <p  class="b">Sub-locality:  <%= record.cslocality %></p>
+                          </div>
+                          <div class="form-group a">
+                              <p class="b" >Date:  <%= record.date %></p>
+                              </div>
+                              <div class="form-group a">
+                                  <p class="b" >Subject:  <%= record.subject %></p>
+                                  </div>
+                                  <div class="form-group a">
+                                      <p class="b" >Description:  <%= record.desc %></p>
+                                      </div>
+                                      
+                                      <div class="a">
+                                      <textarea name="reason" placeholder="Acception Note/Reason of Rejection " id="" cols="30" rows="10" required></textarea> </div>
+                                      <h5 style="text-align: center; color: red;">Note:Accepted complaints are meant to be solved. <br>
+                                      Rejected complaints require reason for rejection.</h5>
+                                    
+                                     <div style="text-align: center;margin-top: 20px;">
+
+                                            <input class="btn-submit btn-lg "    type="submit" name="vote" value="Accept">
+                                            <input class="btn-danger btn-lg" type="submit" name="vote" value="Reject">
+                                          </div>
+                                    </form>
+                                    
+            
+                                     
+
+      
+
+      </div>
+     <div class="col-md-4 col-sm-4 col-xm-12"></div>
+     </div>
+</div>
+
+
+
+
+<div class="footer">
+  <span>Follow Us: </span>
+                   <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                   </a>
+                   <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                   </a>
+                   <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
+                   <a href="aboutus.html"><p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+</div>    <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="snippet.js"></script>
+
+
+
+
+</body>
+</html>

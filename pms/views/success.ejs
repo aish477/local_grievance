@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+ <style>
+       body{
+            background-image: url();
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            }
+         #camp{
+              border: 2px solid black;padding: 40px 40px;margin-left: 50px;margin-right: 50px; margin-top:20px; border-radius: 105px 27px 105px 27px;
+                height: fit-content;
+                width: fit-content;
+              }
+          #user{
+                 margin-top: 20px;
+                 padding-top: 10px;
+               }
+           #dept{
+                margin-top: 100px;
+                padding-top: 1px;
+                }
+           .form{
+                margin-left: 500px;
+                margin-right: 500px;
+           }
+           p{
+             margin-block-start:5px ;
+           }
+           h3{
+             color: rgb(7, 7, 7);
+             font-weight: bolder;
+             font-style: oblique;
+           }
+           .footer{
+                  position: fixed;
+                  left: 0;
+                  bottom: 0;
+                  width: 100%;
+                  background-color:rgb(32, 33,33);
+                  color: white;
+                  text-align: center;
+                }
+                select {
+    padding: 8px;
+    width: 180px;
+    border-radius: 4px;
+
+}
+
+input {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+
+  </style>
+ <head>
+         
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+         <link rel="stylesheet" href="userreg.css">
+         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+         <link rel="stylesheet" href="css/bootstrap.min.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <title>Local Grievance|Registration</title>
+ </head>
+  <body style="width: 100%; margin-bottom: 100px;">
+    <nav class="navbar navbar-expand-md navbar-dark  pl-5 fixed-top" style="background-color: rgb(223, 100, 18);">
+      <img src="../images/logo.jpeg" class="image-fluid rounded " style="height:80px; width:80px; border-radius: 80px;" />
+      <a href="/" class="navbar-portal" style="text-decoration: none; color:white;margin-left: 2%; font-size:35px;font-family: 'Times New Roman', Times, serif ;font-style: oblique;">Local Grievance Portal <br><h6 style="margin-left:5%; color: black; font: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tabmenu">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="tabmenu">
+  
+         
+  <ul class="nav nav-tab" style="margin-left: 50%;">
+  
+  <li class="nav-item "><a href="/logout" class="nav-link " style="color: white; float: right;">Logout</a></li>
+  
+  </ul>
+  
+  
+      </div>
+  </nav>
+
+<form action="/success " method="post" auto-complete="off"> 
+  <div style="margin-top:300px;margin-left:5%;" >
+
+      <% if(msg==''){ %>
+          <p style="text-align: center; border: black ; border-radius: 20px;">You have some error while registering your complaint..!! </p>
+          
+          <% }else{ %>
+              <p style="text-align: center; border: black ; border-radius: 20px;font-size: larger;"> <%= msg %></p>
+          
+            <p style="text-align: center; border: black ; border-radius: 20px; font-size: large;"> Complaint Ref No is <%= ref %>
+            <br>The above reference no. will specify your complaint uniquely.<br>You can search your complaint and its 
+            records via this ref no.</p> 
+            <% } %>
+
+              <button href="/userpage" style="margin-left: 50%;">OK</button>
+
+
+  </div>
+  </form>
+
+  <div class="footer">
+    <span>Follow Us: </span>
+                     <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                     </a>
+                     <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                     </a>
+                     <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
+                     <a href="aboutus.html"><p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+ </div>    <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+</div>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

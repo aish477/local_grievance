@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html>
+<html>
+        <style>
+                body 
+                {
+                  background-image: url('');
+                  background-repeat: no-repeat;
+                  background-attachment: fixed;
+                  background-size: 100% 100%;
+                  
+                }
+                .thumb{width :60%; float:left;height:fit-content ;margin-top:70px; -webkit-box-shadow: 10px 10px 52px 2px rgb(44, 123, 241);
+                  -moz-box-shadow: 10px 10px 52px 2px rgb(44, 123, 241);
+                  box-shadow: 10px 10px 52px 2px rgb(44, 123, 241);
+                  border-radius: 50px 50px 50px 50px;
+                 -moz-border-radius: 50px 50px 50px 50px;
+                 -webkit-border-radius: 50px 50px 50px 50px;
+                 margin-left:50px;
+
+                }
+                .footer{
+                  position: fixed;
+                  left: 0;
+                  bottom: 0;
+                  width: 100%;
+                  background-color:rgb(32, 33,33); 
+                  color: white;
+                  text-align: center;
+                }
+                
+                
+                @media screen and (min-width: 2000px) {
+  div.txt {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  div.txt {
+    font-size: 30px;
+  }
+}
+                               
+          </style>
+<head>
+ 
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <link rel="stylesheet" href="snippet.css">
+   <title>Local Grievance | Home</title>
+</head>
+
+    
+      <nav class="navbar navbar-expand-lg navbar fixed-top " style="background-color: rgb(32, 30, 30);">
+        <div class="container-fluid navigation">
+          <div class="navbar-header">
+            <img src="logo.jpeg" class="rounded" alt="Cinque Terre" style="width: 10%;height:10%;">
+            <a class="navbar-brand " style="color:rgb(44, 123, 241); margin-left: 40px; font-weight:200;font-style: oblique;" href="#">Local Grievance Portal 
+            <h6 style=" color:white ; font-style: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
+          </div>
+          <ul class="nav nav-tab">
+            <button class="btn btn-outline-primary navbar-btn" style="margin-left: 20px;">Home
+            <a href="/index"></a></button>
+          
+            <button class="btn btn-outline-primary navbar-item dropdown" style="margin-left: 20px;">Department Linked
+            <a href="/linked"></a></button>
+            
+            
+              <button class="btn btn-outline-primary navbar-btn" style="margin-left: 20px;margin-right: 20px;"  >
+                <a href="/usersignup"> Signup</a>
+        </button>
+
+        
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Log in
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a data-toggle="modal"data-target="#u">User</a></li>
+            <li><a data-toggle="modal"data-target="#d">Department</a></li>
+            <li><a data-toggle="modal" data-target="#a">Admin</adata-toggle="modal"></li>
+          </ul>
+        </div>
+
+
+       
+        
+          
+
+        
+            
+      
+            
+              <a class="btn btn-outline-primary navbar-btn" style="margin-left: 20px;"href="/aboutus">About Us</a>
+            
+          </ul>
+        </div>
+      </nav>
+      
+<div>
+      <form  method="POST" action="/back" autocomplete="off" >
+           
+        <fieldset class="writers" >
+        <h3 class="text-center" style="color:rgb(44, 123, 241); ;font-family: fantasy;font-weight: 900;">  Profile</h3><hr/>
+            <input type="hidden" value="<%= record._id %>">
+        
+        <p class="text-justify">
+             <p class="txt">Full Name:  <%= record.full_name %></p>
+           
+        </p>
+     
+         <p class="text-justify">
+             <p class="txt" >Date of Birth:  <%= record.date_birth %></p>
+        
+        </p>
+    
+        <p>
+            <p class="txt">Email:  <%= record.email_id %></p>
+            
+        </p>
+      
+        <p>
+            <p class="txt">Mobile Number:  <%= record.mobileno %></p>
+           
+             
+        </p>
+         
+        <p>
+            <p class="txt">Phone Number:  <%= record.phoneno %></p>
+           
+        </p>
+        <p>
+            <p class="txt" >City:  <%= record.city %></p>
+           
+        </p>
+    
+       
+        <p>
+            <p class="txt">Permnant Address:  <%= record.permanant_addr %></p>
+           
+        </p>
+     
+        <p>
+              <p class="txt">Residential Address:  <%= record.residential_addr %></p>
+             
+        </P>
+        <button type="submit"href="/adminpage">Back</button>
+    
+  </div>
+</form>
+
+  
+
+
+
+  <div class="footer">
+    <span>Follow Us: </span>
+                     <a href="http://www.facebook.com/Rupali Zanjad " target="_blank "><img src="fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                     </a>
+                     <a href="https://twitter.com/Rupali zanjad " target="_blank "><img src="twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                     </a>
+                     <a href="https://www.youtube.com/blood donation " target="_blank "><img src="youtube.png " alt="you tube " style="height:20px; width:20px; "> </img>
+                     <a href="" target="_blank "><img src="insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
+                     <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p>
+ </div>
+ 
+
+  
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="snippet.js"></script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

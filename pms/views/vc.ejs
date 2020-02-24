@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+        <style>
+                body
+                {
+                  background-image: url(gf.jpg);
+                  background-repeat: no-repeat;
+                  background-attachment: fixed;
+                  background-size: 100% 100%;
+                }
+                #compform{border: 2px solid rgb(32, 33, 33);padding: 60px 40px;margin-top:50px;-webkit-box-shadow: 4px 2px 37px 10px rgba(32,33,33);
+-moz-box-shadow: 4px 2px 37px 10px rgba(32,33,33);
+box-shadow: 4px 2px 37px 10px rgba(32,33,33);}
+         .thumb{width :70%; float: left; height:300px ;margin-top:50px; -webkit-box-shadow: 3px 3px 33px 9px rgba(32,33,33);
+-moz-box-shadow: 3px 3px 33px 9px rgba(32,33,33);
+box-shadow: 3px 3px 33px 9px rgba(32,33,33);
+}
+h1{color:rgb(18, 121, 14);text-align: center;font-weight: bolder;}
+                .form-group{color:rgb(0, 0, 0);text-shadow:rgba(44,123,241);}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgba(32,33,33);
+   color: white;
+   text-align: center;
+}
+          </style>
+<head>
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Local Grievance | Complaint</title>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark  pl-5 fixed-top" style="background-color: rgb(223, 100, 18);">
+    <img src="../images/logo.jpeg" class="image-fluid rounded " style="height:80px; width:80px; border-radius: 80px;" />
+    <a href="/" class="navbar-portal" style="text-decoration: none; color:white;margin-left: 2%; font-size:35px;font-family: 'Times New Roman', Times, serif ;font-style: oblique;">Local Grievance Portal <br><h6 style="margin-left:5%; color: black; font: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tabmenu">
+  <span class="navbar-toggler-icon"></span>
+</button>
+    <div class="collapse navbar-collapse" id="tabmenu">
+
+       
+<ul class="nav nav-tab" style="margin-left: 50%;">
+
+
+</ul>
+
+
+    </div>
+</nav>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xm-12"></div>
+          <div class="col-md-4 col-sm-4 col-xm-12">
+             <form id="compform" action="/ok" method="POST" autocomplete="off">
+               <h1 style="margin-bottom: 40px;">Complaint Form</h1>
+               <input type="hidden" value="<%= record._id%>">
+               <div class="form-group">
+                <p style="color: rgb(233, 45, 45);">
+                   Reference No.:<%= record.ref_no%>
+                </p>
+                  </div> 
+                 <div class="form-group" style="margin-top: 4px;">
+                  <p style="color: rgb(233, 45, 45);">
+                    Department Name:<%= record.cdepartname%>
+                 </p><br/>
+                  </div>
+                  <div class="form-group">
+                    <p style="color: rgb(233, 45, 45);">
+                        Name:<%= record.cname%>
+                    </p>
+                 </div>
+                 <div class="form-group">
+                     <p style="color: rgb(233, 45, 45);">
+                         Aadhar No.:<%= record.adhar%>
+                     </p>
+                 </div>
+                 <div class="form-group">
+                  <p style="color: rgb(233, 45, 45);">
+                      Contact:<%= record.contact%>
+                  </p>
+                 </div>
+                 <div class="form-group">
+                     <p style="color: rgb(233, 45, 45);">
+                         Email id:<%= record.cemail%>
+                     </p>
+                 </div>
+                 <div class="form-group">
+                     <p style="color: rgb(233, 45, 45);">
+                   Address(Residential):<%= record.caddr%>
+                </p>
+                   </div>
+                
+                   <div class="form-group">
+                       <p style="color: rgb(233, 45, 45);">
+                    Address(Permenant):<%= record.cpaddr%>
+                    </p>
+                       </div>
+                       <div class="form-group">
+                          <p style="color: rgb(233, 45, 45);">
+                              Locality: <%= record.clocality%>  
+                          </p>
+                           </div>
+                           <div class="form-group">
+                               <p style="color: rgb(233, 45, 45);">
+                                   Sub-Locality:<%= record.cslocality%>
+                               </p>
+                               </div>
+                               <div class="form-group">
+                                   <p style="color: rgb(233, 45, 45);">
+                                       Date:<%= record.date%>
+                                   </p>
+                                   </div>
+                                   <div class="form-group">
+                                       <p style="color: rgb(233, 45, 45);">
+                                       Subject:<%= record.subject%>
+                                       </p>
+                                       </div>
+                                       <div class="form-group">
+                                         <p style="color: rgb(233, 45, 45);">
+                                            Description:<%= record.desc%>
+                                         </p>
+                                           </div>
+                                           <div class="form-group">
+                                            <p style="color: rgb(233, 45, 45);">
+                                               Status:<%= record.status%>
+                                            </p>
+                                              </div>
+                                              <div class="form-group">
+                                                <p style="color: rgb(233, 45, 45);">
+                                                   Reason:<%= record.reason%>
+                                                </p>
+                                                  </div>
+                                          
+                     <button type="submit" class="btn btn-success"  href="/userpage" >OK</button>
+             </form>
+            </div>
+      </div>
+      <!-- Button trigger modal -->
+      <div class="footer">
+        <span>Follow Us: </span>
+                         <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                         </a>
+                         <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                         </a>
+                         <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
+                         <a href="aboutus.html"><p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+     </div>    <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+    </div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

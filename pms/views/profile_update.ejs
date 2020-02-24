@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+ <style>
+       body{
+            background-image: url();
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+            }
+         #camp{
+              padding: 40px 40px;margin-left: 50px;margin-right: 50px; margin-top:20px; border-radius: 105px 27px 105px 27px;
+                height: fit-content;
+                width: fit-content;
+              }
+          #user{
+                 margin-top: 20px;
+                 padding-top: 10px;
+               }
+           #dept{
+                margin-top: 100px;
+                padding-top: 1px;
+                }
+           .form{
+                margin-left: 500px;
+                margin-right: 500px;
+           }
+           p{
+             margin-block-start:5px ;
+           }
+           h3{
+             color: rgb(7, 7, 7);
+             font-weight: bolder;
+             font-style: oblique;
+           }
+           .footer{
+                  position: fixed;
+                  left: 0;
+                  bottom: 0;
+                  width: 100%;
+                  background-color:rgb(32, 33,33);
+                  color: white;
+                  text-align: center;
+                }
+                select {
+    padding: 8px;
+    width: 180px;
+  
+
+}
+
+input {
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+
+  </style>
+ <head>
+        
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+         <link rel="stylesheet" href="userreg.css">
+         <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+         <link rel="stylesheet" href="css/bootstrap.min.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <title>Local Grievance|Registration</title>
+ </head>
+  <body style="width: 100%; margin-bottom: 100px;">
+    <div style="margin-bottom: 100px;">
+  
+      <nav class="navbar navbar-expand-md navbar-dark  pl-5 fixed-top" style="background-color: rgb(223, 100, 18);">
+        <img src="../images/logo.jpeg" class="image-fluid rounded " style="height:80px; width:80px; border-radius: 80px;" />
+        <a href="/" class="navbar-portal" style="text-decoration: none; color:white;margin-left: 2%; font-size:35px;font-family: 'Times New Roman', Times, serif ;font-style: oblique;">Local Grievance Portal <br><h6 style="margin-left:5%; color: black; font: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
+        
+ 
+        <div class=" nav-tab" >
+    
+           
+    <ul class="navbar-nav" style="margin-left: 90%;">
+      <li class="nav-item" style="float: right;"><a href=" #" class="nav-link" style="color: white;">Logged in as: <% if(loginUser) { %> <%= loginUser %> <% } %> </a></li>
+
+    <li class="nav-item " style="margin-left: 100%;"><a href="/userpage" class="nav-link " style="color: white;">Back</a></li>
+
+    </ul>
+    
+    
+        </div>
+    </nav>
+    
+    </div>
+   
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-sm-4 col-xm-12">
+     <section id="user" style="margin-left: 100%;" >
+      <form   id="camp" action="/update" method="post" autocomplete="off">
+        <!--Nextpage-->
+        <input type="hidden" name="id" value="<%= records._id %>">
+                                   
+       <fieldset class="writers" >
+       <h3 class="text-justify" style="color:rgb(223, 100, 18); ;font-family:sans-serif;font-weight:500;">Update Profile</h3><hr/>
+       <p class="text-justify">
+            <label class="txt">Full Name:</label></br>
+            <p name="uname" placeholder="Enter your full name" type="text" value=""><%= records.full_name %></p><br/>
+
+
+           
+           
+       <p>
+           <label class="txt">Email:</label><br>
+           <input name="email" placeholder="Enter E-Mail Id" type="email"  value="<%= records.email_id  %>" ><br/>
+
+             </p><br/>
+       <p>
+           <label class="txt">Mobile Number:</label><br>
+           <input name="mobileno" placeholder="Enter Mobile No" type="tel"  value="<%= records.mobileno  %>"><br/>
+           
+
+       </p><br/>
+       <p>
+           <label class="txt">Phone Number:</label><br>
+           <input name="phoneno" placeholder="Enter Phone No" type="tel"  value="<%= records.phoneno%>"><br/>
+       </p><br/>
+       <p>
+        <label>Select Country:</label> <br>
+        <p value=""name="date" ><%= records.country %></p>
+          
+                                        
+    
+       
+       
+
+    </p><br/>
+    <p>
+        <label>Select State:</label> <br>
+                
+        <p  value=""name="date" ><%= records.state %></p>
+         
+    
+       
+
+      
+    </p><br/>
+    <p>
+        <label>Select District:</label><br>
+        <p  value=""name="date" ><%= records.district %></p>
+      
+    </p><br/>
+    <p>
+        <label>Select Village:</label> <br>
+        <select name="state">
+   
+        <option <% if(records.city=="MANCHER"){ %>selected <%}%>>MANCHER</option>
+       
+        <option <% if(records.city=="MANCHER"){ %>selected <%}%>>AWSARI(KH)</option>
+        </select>
+        
+     </p><br/>
+       <p>
+           <label class="txt">Permnant Address:</label><br>
+           <input id="paddr"  type="text" name="paddr" value="<%= records.permanant_addr %>" /><br/>
+                                      
+           </p><br/>
+       <p>
+             <label class="txt">Residential Address:</label><br>
+             <input id="raddr"  type="text" name="raddr" value="<%= records.residential_addr %>" /><br/>
+          
+    
+       </P><br/>
+        <button type="submit" class="btn btn-danger btn-lg" style="margin-right: 10px; background-color:rgb(223, 100, 18);" href="/userpage">Update</button>
+       
+       </label></br>
+       <div>
+        <% if(msg!=''){%>
+        <p style="text-align: center; border: black ; border-radius: 20px;"><%= msg %></p>
+        <% } %>
+    </div>
+       </fieldset>
+       </form>
+       </section>
+       </div>
+       </div>
+       </div>
+       <div class="footer">
+        <span>Follow Us: </span>
+                         <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                         </a>
+                         <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                         </a>
+                         <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
+                         <a href="aboutus.html"><p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+      </div>    <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+      </div>
+    <div class="container-fluid">
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

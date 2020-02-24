@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+        <style>
+                body 
+                {
+                  background-image: url();
+                  background-repeat: no-repeat;
+                  background-attachment: fixed;
+                  background-size: 100% 100%;
+                  
+                }
+                
+                
+                .footer{
+                  position: fixed;
+                  left: 0;
+                  bottom: 0;
+                  width: 100%;
+                  background-color:rgb(32, 33,33); 
+                  color: white;
+                  text-align: center;
+                }
+                @media screen and (min-width: 2000px) {
+  div.txt {
+    font-size: 80px;
+  }
+}
+@media screen and (min-width: 2000px) {
+  div.txt {
+    font-size: 80px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  div.txt {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  div.txt {
+    font-size: 30px;
+  }
+}
+                             
+          </style>
+<head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <title>Local Grievances | Login</title>
+</head>
+<body style="width:100%;height: 300px;">
+  <div style="margin-bottom: 100px;">
+    <nav class="navbar navbar-expand-md navbar-dark  pl-5 fixed-top" style="background-color: rgb(223, 100, 18);">
+        <img src="../images/logo.jpeg" class="image-fluid rounded " style="height:80px; width:80px; border-radius: 80px;" />
+        <a href="/" class="navbar-portal" style="text-decoration: none; color:white;margin-left: 2%; font-size:35px;font-family: 'Times New Roman', Times, serif ;font-style: oblique;">Local Grievance Portal <br><h6 style="margin-left:5%; color: black; font: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
+     </nav></div>
+
+<div class="h-100 text-center align-items-center" style="margin-left:35%;margin-top:10%;">
+
+    <div class="login-form" style="border: solid rgb(252, 109, 109); padding:10px; width:400px;">
+        <form method="POST">
+            <h2 class="text-center" id="login">Log in</h2>
+
+            <% if(msg!=''){%>
+                <div class="alert alert-warning " role="alert">
+                    <%= msg %>
+                </div>
+                <% }%>
+                    <div class="form-group">
+                        <input type="text" name="uname" class="form-control" placeholder="E-mail id"  >
+                        <% if(errors.uname){%>
+                          <p style="color: red;">
+                              <%= errors.uname.msg%>
+                          </p>
+                          <%}%>
+                       
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="upass" class="form-control" placeholder="Password">
+                        <% if(errors.upass){%>
+                          <p style="color: red;">
+                              <%= errors.upass.msg%>
+                          </p>
+                          <%}%>
+                        
+
+                    </div>
+                    <div class="form-group" >
+                
+                    <button type="submit" href="/userpage" formaction="/login" class="btn btn-danger " >Log in as user</button></div>
+                   <div class="form-group"> <button type="submit" href="/departmentpage" formaction="/departmentlogin" id="lbtn" class="btn btn-danger " >Log in as dept </button></div>
+                  <div class="form-group">  <button type="submit" formaction="/login" href="/adminpage"id="lbtn"  class="btn btn-danger " >Log in as admin</button>
+
+                    </div>
+                    
+                  
+
+                  
+                    <div class="clearfix">
+
+                        <a href="/forgotpass" class="pull-right" id="forgot">Forgot Password?</a>
+                    </div>
+
+        </form>
+
+    </div>
+
+
+</div>
+
+
+</div>
+</div>
+
+<div class="footer">
+  <span>Follow Us: </span>
+                   <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                   </a>
+                   <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                   </a>
+                   <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
+                   <a href="aboutus.html"><p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+</div>    <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+</div>
+
+
+
+
+
+
+
+  
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="snippet.js"></script>
+
+
+
+
+</body>
+</html>
