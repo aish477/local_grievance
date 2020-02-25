@@ -1,4 +1,3 @@
-
 <!--
 <!DOCTYPE html>
 <html>
@@ -146,226 +145,239 @@
 
 <!DOCTYPE html>
 <html>
-        <style>
-                body
-                {
-                  background-image: url();
-                  background-repeat: no-repeat;
-                  background-attachment: fixed;
-                  background-size: 100% 100%;
-                }
-                .thumb{width:fit-content; float:left;height:fit-content ;
-                }
-                @media only screen and (max-width: 1500px) {
-    .navbar-portal {
-        font-size: 40px;
-        margin-left: 20px;
+<style>
+    body {
+        background-image: url();
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
     }
-    .image-fluid {
-        height: 80px;
-        width: 80px;
-        border-radius: 50%;
+    
+    .thumb {
+        width: fit-content;
+        float: left;
+        height: fit-content;
     }
-}
-
-@media only screen and (max-width: 800px) {
-    .navbar-portal {
-        font-size: 35px;
+    
+    @media only screen and (max-width: 1500px) {
+        .navbar-portal {
+            font-size: 40px;
+            margin-left: 20px;
+        }
+        .image-fluid {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+        }
+    }
+    
+    @media only screen and (max-width: 800px) {
+        .navbar-portal {
+            font-size: 35px;
+            margin-left: 0px;
+        }
+        .image-fluid {
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+        }
+    }
+    
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(32, 33, 33);
+        color: white;
+        text-align: center;
+    }
+    
+    .img1 {
+        width: 100%;
+        height: 250px;
+        margin-top: 70px;
+    }
+    
+    .img2 {
+        margin-top: 70px;
+        margin-right: 50px;
+        width: 25%;
+        height: 25%;
+        float: right;
+    }
+    
+    @media screen and (min-width: 2000px) {
+        div.txt {
+            font-size: 80px;
+        }
+    }
+    
+    @media screen and (max-width: 1000px) {
+        div.txt {
+            font-size: 30px;
+        }
+    }
+    
+    .container {
+        position: absolute;
+        width: fit-content;
+    }
+    
+    .container img {
+        width: 2000px;
+        height: 300px;
         margin-left: 0px;
+        margin-top: 100px;
     }
-    .image-fluid {
-        height: 70px;
-        width: 70px;
-        border-radius: 50%;
+    
+    .bt {
+        position: absolute;
+        top: 70%;
+        left: 60%;
+        transform: translate(-90%, -90%);
+        -ms-transform: translate(-90%, -90%);
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
     }
-}
-                .footer{
-                  position:fixed;
-                  left: 0;
-                  bottom: 0;
-                  width: 100%;
-                  background-color:rgb(32, 33, 33);
-                  color: white;
-                  text-align: center;
-                }
-                .img1{
-                    width: 100%;
-                    height: 250px;
-                    margin-top: 70px;
-                }
-                .img2{
-                  margin-top: 70px;
-                  margin-right: 50px;
-                  width: 25%;
-                  height: 25%;
-                  float: right;
-                }
-                @media screen and (min-width: 2000px) {
-  div.txt {
-    font-size: 80px;
-  }
-}
-@media screen and (max-width: 1000px) {
-  div.txt {
-    font-size: 30px;
-  }
-}
-.container {
-  position:absolute;
-  width:fit-content;
-
-}
-
-.container img {
-  width:2000px;
-  height:300px;
- margin-left: 0px;
-  margin-top: 100px;
-  
-}
-
- .bt {
-  position: absolute;
-  top: 70%;
-  left: 60%;
-  transform: translate(-90%, -90%);
-  -ms-transform: translate(-90%, -90%);
-  color: white;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-}
-.bot
-{
-  position: fixed;
-  top: 25%;
-  left: 55%;
-  transform: translate(-30%, -30%);
-  -ms-transform: translate(-30%, -30%);
-  color: white;
-  font-size: 16px;
-  padding: 12px 24px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center;
-
-}
-.wrapper {
-    text-align: center;
-}
-
-.button {
-    position: absolute;
-    top: 80%;
-}
-
+    
+    .bot {
+        position: fixed;
+        top: 25%;
+        left: 55%;
+        transform: translate(-30%, -30%);
+        -ms-transform: translate(-30%, -30%);
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+    }
+    
+    .wrapper {
+        text-align: center;
+    }
+    
+    .button {
+        position: absolute;
+        top: 80%;
+    }
 </style>
+
 <head>
-  
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-   <link rel="stylesheet" href="snippet.css">
-   <title>Local Grievance | Home</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="snippet.css">
+    <title>Local Grievance | Home</title>
 </head>
-<body >
-  <div style="margin-bottom: 100px;">
-    <nav class="navbar navbar-expand-md navbar-dark  pl-5 fixed-top" style="background-color: rgb(223, 100, 18);">
-        <img src="../images/logo.jpeg" class="image-fluid rounded " style="height:80px; width:80px; border-radius: 80px;" />
-        <a href="/" class="navbar-portal" style="text-decoration: none; color:white;margin-left: 2%; font-size:35px;font-family: 'Times New Roman', Times, serif ;font-style: oblique;">Local Grievance Portal <br><h6 style="margin-left:5%; color: black; font: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tabmenu">
+
+<body>
+    <div style="margin-bottom: 150px;">
+        <nav class="navbar navbar-expand-md navbar-dark  pl-5 fixed-top" style="background-color: rgb(223, 100, 18);">
+            <img src="../images/logo.jpeg" class="image-fluid rounded " style="height:80px; width:80px; border-radius: 80px;" />
+            <a href="/" class="navbar-portal" style="text-decoration: none; color:white;margin-left: 0%; font-size:30px;font-family: 'Times New Roman', Times, serif ;font-style: oblique;">Local Grievance Portal <br><h6 style="margin-left:5%; color: black; font: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tabmenu">
       <span class="navbar-toggler-icon"></span>
   </button>
-        <div class="collapse navbar-collapse" id="tabmenu">
+            <div class="collapse navbar-collapse" id="tabmenu">
 
-            <ul class="navbar-nav pl-5 custom-nav" style="margin-left:40%; font-size:20px; color:rgb(8, 8, 7);">
-             
-               
-                <li class="nav-item"><a href="/" class="nav-link"  style="color: white;" aria-disabled>Home</a> </li>
-                <li class="nav-item"><a href="/login" class="nav-link" style="color: white;"> <% if(!loginUser) { %>  Login  <% } %> </a></li>
-                  <li class="nav-item"><a href="/linked" class="nav-link" style="color: white;">Department Linked</a></li>
-                  <li class="nav-item"><a href="/usersignup" class="nav-link" style="color: white;">Register</a></li>
-                  <li class="nav-item "><a href="/aboutus" class="nav-link " style="color: white;">About us</a></li>
-                 
-            </ul>
+                <ul class="navbar-nav pl-5 custom-nav" style="margin-left:20%; font-size:20px; color:rgb(8, 8, 7);">
 
 
-        </div>
-    </nav>
-</div>
+                    <li class="nav-item"><a href="/" class="nav-link" style="color: white;" aria-disabled>Home</a> </li>
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link" style="color: white;">
+                            <% if(!loginUser) { %> Login
+                                <% } %>
+                        </a>
+                    </li>
+                    <li class="nav-item"><a href="/linked" class="nav-link" style="color: white;">Department Linked</a></li>
+                    <li class="nav-item"><a href="/usersignup" class="nav-link" style="color: white;">Register</a></li>
+                    <li class="nav-item "><a href="/aboutus" class="nav-link " style="color: white;">About us</a></li>
 
-<marquee style="margin-top:2%;color: rgb(197, 29, 29);font-family: fantasy;font-style: italic;font-size:20px;font-weight: 1500;">Local Grievance Portal | Sound your
-  complaints Louder</marquee>
+                </ul>
 
-<div>
-  <section style=" background-image: url(images/3.svg) ;color:black;">
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-lg-2">
-           
-                  <div class="text-centre" style="padding:50px;">
-                    <div class="row">
-                    <div class="col-lg-8">
-                  </div>
+
+            </div>
+        </nav>
+    </div>
+
+    <marquee style="margin-top:2%;color: rgb(197, 29, 29);font-family: fantasy;font-style: italic;font-size:20px;font-weight: 1500;">Local Grievance Portal | Sound your complaints Louder</marquee>
+
+    <div>
+        <section style=" background-image: url(images/3.svg) ;color:black;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-2">
+
+                        <div class="text-centre" style="padding:50px;">
+                            <div class="row">
+                                <div class="col-lg-8">
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
-                    
-                     </div>
-              </div>
-              <div class="col-lg-9">
-            
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                  <ol class="carousel-indicators" >
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                  </ol>
-                  <div class="carousel-inner">
-                    <div class="carousel-item active">
-                      <img class="d-block w-100" src="../images/pas.png" alt="First slide">
+                    <div class="col-lg-9">
+
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="../images/pas.png" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="../images/g.png" alt="Second slide">
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="../images/g2.png" alt="third slide">
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+
+
+
                     </div>
-                    <div class="carousel-item">
-                      <img class="d-block w-100" src="../images/g.png" alt="Second slide">
-                    </div>
-                   
-                  <div class="carousel-item">
-                    <img class="d-block w-100" src="../images/g2.png" alt="third slide">
-                  </div>
-                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                  </a>
                 </div>
-              </div>
-
-
-
-          </div>
-      </div>
-</div>
-</section>
-</div>
-      </div>
-      <div class="wrapper" style="margin-top: 10px;">
+            </div>
+        </section>
+    </div>
+    </div>
+    <div class="wrapper" style="margin-top: 10px;">
         <a type="button" href="/login" class="btn btn-primary btn-lg" style="margin-right: 10px;">New Complaint</a>
         <a type="button" href="/login" class="btn btn-primary btn-lg" onclick="window.location.href='#loguser';">Status of Complaint</a>
-    
-      </div>
+
+    </div>
 
 
 
-            <div class="container " style="padding: 30px; margin-left:20%; margin-bottom: 30px;"  >
-              <div class="row no-gutters">
-              <div class="row ">
-                  <v class="col-40 ">
+    <div class="container " style="padding: 30px; margin-left:20%; margin-bottom: 30px;">
+        <div class="row no-gutters">
+            <div class="row ">
+                <v class="col-40 ">
                     <section class="jumbotron">
-                    <div class=" about " style="margin-top:20px; ">
-                          <p style="text-align: center; font-size: 23px; "> <i> The portal deals with
+                        <div class=" about " style="margin-top:20px; ">
+                            <p style="text-align: center; font-size: 23px; "> <i> The portal deals with
                             the all complaints that had been entered on site regrading discomfort or uneasy behaviour seen in the society.It may particular talks about your locality and local problem face by individual.In such scenario one can
                             give complaint on the portal which will be deliver to particular department and also to particular person of responsibility who hanving authority
                             to clearify your complaints and solve the issue regarding the complaint.This portal will help every individual to solve some little big problem
@@ -373,31 +385,36 @@
                             portal will make it easy and possible from anywhere.This will leads to ideal society."</p>
                         </i></p>
                         </div>
-                      </section>
-                  </v>
-              </div>
-              </div>
-          </div>
-      
-
-           
-   
-        
-              
-       <div class="footer">
-        <span>Follow Us: </span>
-                         <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
-                         </a>
-                         <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
-                         </a>
-                         <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
-                         <a href="aboutus.html"><p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
-     </div>    <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+                    </section>
+                </v>
+            </div>
+        </div>
     </div>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script  src="snippet.js"></script>
+
+
+
+
+
+
+    <div class="footer">
+        <span>Follow Us: </span>
+        <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+        </a>
+        <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+        </a>
+        <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
+            <a href="aboutus.html">
+                <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p>
+            </a>
+    </div>
+    <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p>
+    </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="snippet.js"></script>
 </body>
+
 </html>
