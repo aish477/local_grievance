@@ -1,100 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-        <style>
-                body
-                {
-                  background-image: url('');
-                  background-repeat: no-repeat;
-                  background-attachment: fixed;
-                  background-size: 100% 100%;
-                }
-         .thumb{width :70%; float: left; height:400px ;margin-top:100px;
-}
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: rgba(44,123,241);
-   color: white;
-   text-align: center;}
-.next{margin-top: 10px;margin-left: 40%;
-}
-.footer{
-                  position: fixed;
-                  left: 0;
-                  bottom: 0;
-                  width: 100%;
-                  background-color:rgb(32, 33,33);
-                  color: white;
-                  text-align: center;
-                }
-              
-h5{text-align: center; color:rgba(44,123,241) ;}
-.txt{color:red; font-size: 20px;margin-top: 30px;}
-.checkbox-lg .custom-control-label::before,
-.checkbox-lg .custom-control-label::after {
-  top: .8rem;
-  width: 1.55rem;
-  height: 1.55rem;
-}
-.checkbox-lg .custom-control-label {
-  padding-top: 13px;
-  padding-left: 6px;
-}
-          </style>
+<style>
+    body {
+        background-image: url('');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    
+    .thumb {
+        width: 70%;
+        float: left;
+        height: 400px;
+        margin-top: 100px;
+    }
+    
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(44, 123, 241);
+        color: white;
+        text-align: center;
+    }
+    
+    .next {
+        margin-top: 10px;
+        margin-left: 40%;
+    }
+    
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(32, 33, 33);
+        color: white;
+        text-align: center;
+    }
+    
+    h5 {
+        text-align: center;
+        color: rgba(44, 123, 241);
+    }
+    
+    .txt {
+        color: red;
+        font-size: 20px;
+        margin-top: 30px;
+    }
+    
+    .checkbox-lg .custom-control-label::before,
+    .checkbox-lg .custom-control-label::after {
+        top: .8rem;
+        width: 1.55rem;
+        height: 1.55rem;
+    }
+    
+    .checkbox-lg .custom-control-label {
+        padding-top: 13px;
+        padding-left: 6px;
+    }
+</style>
+
 <head>
 
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <title>Local Grievance | Complaint</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Local Grievance | Complaint</title>
 </head>
 
 <nav class="navbar navbar-expand-md navbar-dark  pl-5 fixed-top" style="background-color: rgb(223, 100, 18);">
-  <img src="../images/logo.jpeg" class="image-fluid rounded " style="height:80px; width:80px; border-radius: 80px;" />
-  <a href="/" class="navbar-portal" style="text-decoration: none; color:white;margin-left: 2%; font-size:35px;font-family: 'Times New Roman', Times, serif ;font-style: oblique;">Local Grievance Portal <br><h6 style="margin-left:5%; color: black; font: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
- 
-  <div class=" navbar-item" id="tabmenu">
-    <ul class="navbar-nav" style="margin-left: 90%;">
-    <li class="nav-item" style="float: right;"><a href=" #" class="nav-link" style="color: white;">Logged in as: <% if(loginUser) { %> <%= loginUser %> <% } %> </a></li>
+    <img src="../images/logo.jpeg" class="image-fluid rounded " style="height:80px; width:80px; border-radius: 80px;" />
+    <a href="/" class="navbar-portal" style="text-decoration: none; color:white;margin-left: 0%; font-size:35px;font-family: 'Times New Roman', Times, serif ;font-style: oblique;">Local Grievance Portal <br><h6 style="margin-left:5%; color: black; font: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
 
-</ul>
-  </div>
+    <div class=" navbar-item" id="tabmenu">
+        <ul class="navbar-nav" style="margin-left: 30%;">
+            <li class="nav-item" style="float: right;"><a href=" #" class="nav-link" style="color: white;">Logged in as: <% if(loginUser) { %> <%= loginUser %> <% } %> </a></li>
+
+        </ul>
+    </div>
 </nav>
 
-      <div style="max-width: 1000px;margin-left: 500px; margin-top: 200px ; padding: 10px;">
-        <div class="container-fluid">
-          <div class="row justify-content-center" style="margin-top:15px">
+<div style="max-width: 1000px;margin-left: 30%; margin-top: 200px ; padding: 10px;">
+    <div class="container-fluid">
+        <div class="row justify-content-center" style="margin-top:15px">
             <div class="col-md-12 thumb">
                 <form action="/desc" method="POST" autocomplete="off" id="Complaintnos">
                     <p style="font-size:35px; text-align: center;color: black;">List of subjects/topics which can not be treated as grievance. <br></p>
-                        <p style="font-size: 25px; text-align: left; color: black">RTI Matters <br>
-                        Court related / Subjudice matters <br>
-                        Religious matters <br>
-                        Only grievance may be registered and not suggestions <br>
-                        </p>
-                        <div>
-                          <input  class="form-check-input checkbox-lg" type="checkbox" id="gridCheck" checked>
-                           <label class="form-check-label" for="gridCheck">
+                    <p style="font-size: 25px; text-align: left; color: black">RTI Matters <br> Court related / Subjudice matters <br> Religious matters <br> Only grievance may be registered and not suggestions <br>
+                    </p>
+                    <div>
+                        <input class="form-check-input checkbox-lg" type="checkbox" id="gridCheck" checked>
+                        <label class="form-check-label" for="gridCheck">
                           I accept my grievance is not from above type..  </label>
-                        </div>
-                  </form>
+                    </div>
+                </form>
             </div>
-          </div>
         </div>
-      </div>
-      <a type="submit" class="btn btn-lg btn-success next" href="/complaintform">NEXT</a>
-      <div class="footer">
-        <span>Follow Us: </span>
-                         <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
-                         </a>
-                         <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
-                         </a>
-                         <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
-                         <a href="aboutus.html"><p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
-     </div>    <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
     </div>
-    <div class="container-fluid">
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-</body>
+</div>
+<a type="submit" class="btn btn-lg btn-success next" href="/complaintform">NEXT</a>
+<div class="footer">
+    <span>Follow Us: </span>
+    <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+    </a>
+    <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+    </a>
+    <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
+        <a href="aboutus.html">
+            <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p>
+        </a>
+</div>
+<p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p>
+</a>
+</div>
+<div class="container-fluid">
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    </body>
+
 </html>

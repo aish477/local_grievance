@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-        <style>
-                body 
-                {
-                 
-                  background-repeat: no-repeat;
-                  background-attachment: fixed;
-                  background-size: 100% 100%;
-                  
-                }
-              
-                
-         .thumb{height:fit-content ;margin-top:50px; 
-}
-.footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: rgba(32,33,33);
-   color: white;
-   text-align: center;
-}
-          </style>
+<style>
+    body {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    
+    .thumb {
+        height: fit-content;
+        margin-top: 50px;
+    }
+    
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(32, 33, 33);
+        color: white;
+        text-align: center;
+    }
+</style>
+
 <head>
-  
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <title>Local Grievance | USER PAGE </title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Local Grievance | USER PAGE </title>
 </head>
 <div style="margin-bottom: 100px;">
-  
-  <nav class="navbar navbar-expand-md navbar-dark  pl-5 fixed-top" style="background-color: rgb(223, 100, 18);">
+
+    <nav class="navbar navbar-expand-md navbar-dark  pl-5 fixed-top" style="background-color: rgb(223, 100, 18);">
         <img src="../images/logo.jpeg" class="image-fluid rounded " style="height:80px; width:80px; border-radius: 80px;" />
-        <a href="/" class="navbar-portal" style="text-decoration: none; color:white;margin-left: 2%; font-size:35px;font-family: 'Times New Roman', Times, serif ;font-style: oblique;">Local Grievance Portal <br><h6 style="margin-left:5%; color: black; font: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
+        <a href="/" class="navbar-portal" style="text-decoration: none; color:white;margin-left: 0%; font-size:35px;font-family: 'Times New Roman', Times, serif ;font-style: oblique;">Local Grievance Portal <br><h6 style="margin-left:5%; color: black; font: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tabmenu">
       <span class="navbar-toggler-icon"></span>
   </button>
         <div class="collapse navbar-collapse" id="tabmenu">
 
-           
-<ul class="nav nav-tab" style="margin-left: 50%;">
- 
-  <li class="nav-item"><a href="/profile_update" class="nav-link" style="color: white;">Update Profile</a> </li>      
 
-  <li class="nav-item" style="float: right;"><a href=" #" class="nav-link" style="color: white;">Logged in as: <% if(loginUser) { %> <%= loginUser %> <% } %> </a></li>
-  <li class="nav-item"><a href="/logout" class="nav-link" style="color: white;">Logout</a> </li>
+            <ul class="nav nav-tab" style="margin-left: 30%;">
 
-</ul>
+                <li class="nav-item"><a href="/profile_update" class="nav-link" style="color: white;">Update Profile</a> </li>
+
+                <li class="nav-item" style="float: right;"><a href=" #" class="nav-link" style="color: white;">Logged in as: <% if(loginUser) { %> <%= loginUser %> <% } %> </a></li>
+                <li class="nav-item"><a href="/logout" class="nav-link" style="color: white;">Logout</a> </li>
+
+            </ul>
 
 
         </div>
@@ -54,42 +54,45 @@
 </div>
 
 
-      <div class="col-md-5  thumb" style="margin-left:30%;margin-top: 10%;">
-        <blockquote class="blockquote text-center">
-         
-          <p class=" text-justify font-italic h4 "  style="color:rgb(7, 7, 7) ;padding:40px ;font-style: italic;">New Complaint will register on 'New Complaint' tab.
-          Remember that your Complaint should not belongs to categories mention on portal after this tab.Also note that complaint you are registering
-          should delivered to relevant Department.
-          </p>
-        </blockquote>
-      </div>
-   
+<div class="col-md-6  thumb" style="margin-left:25%;margin-top: 200px;">
+    <blockquote class="blockquote text-center">
+
+        <p class=" text-justify font-italic h4 " style="color:rgb(7, 7, 7) ;padding:40px ;font-style: italic;">New Complaint will register on 'New Complaint' tab. Remember that your Complaint should not belongs to categories mention on portal after this tab.Also note that complaint you are registering should delivered to relevant Department.
+        </p>
+    </blockquote>
+</div>
 
 
 
-    <div class="row " style="margin-top:5%;margin-left:25%;">
-      
-        
-        <a type="button" class="btn btn-danger btn-lg" href="/desc" style="margin-left: 150px;"> New Complaint</a>
-        <form action="/status" method="POST" autocomplete="off"></form>
-         <a type="button" class="btn btn-danger btn-lg " href="/status" style="margin-left: 50px;">Status of Complaints</a>
-        </form>
-  </div>
+
+<div class="row " style="margin-top:5%;margin-left:20%;">
+
+
+    <a type="button" class="btn btn-danger btn-lg" href="/desc" style="margin-left: 150px;"> New Complaint</a>
+    <form action="/status" method="POST" autocomplete="off"></form>
+    <a type="button" class="btn btn-danger btn-lg " href="/status" style="margin-left: 50px;">Status of Complaints</a>
+    </form>
+</div>
 </div>
 <div class="footer">
-  <span>Follow Us: </span>
-                   <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
-                   </a>
-                   <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
-                   </a>
-                   <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
-                   <a href="aboutus.html"><p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
-</div>    <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+    <span>Follow Us: </span>
+    <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+    </a>
+    <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+    </a>
+    <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
+        <a href="aboutus.html">
+            <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p>
+        </a>
 </div>
- 
-  
+<p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p>
+</a>
+</div>
+
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
+
 </html>
