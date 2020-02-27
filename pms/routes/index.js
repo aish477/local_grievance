@@ -52,7 +52,7 @@ function checkEmail(req, res, next) {
     checkexitemail.exec((err, data) => {
         if (err) throw err;
         if (data) {
-            return res.render('index', { title: 'login', loginUser:'',msg: 'Email already exists...' });
+            return res.render('index', { title: 'login', loginUser: '', msg: 'Email already exists...' });
         }
         next();
     });
@@ -64,7 +64,7 @@ function checkEmailD(req, res, next) {
     checkexitemail.exec((err, data) => {
         if (err) throw err;
         if (data) {
-            return res.render('index', { title: 'login', loginUser:'',msg: 'Email already exists...' });
+            return res.render('index', { title: 'login', loginUser: '', msg: 'Email already exists...' });
         }
         next();
     });
@@ -77,15 +77,15 @@ function checkEmailD(req, res, next) {
 
 router.get('/', function(req, res, next) {
     //  console.log(req.session.user);
-    if(!req.session.user){
-        res.render('index', { title: 'Home', loginUser:'', msg: '' });
+    if (!req.session.user) {
+        res.render('index', { title: 'Home', msg: '' });
 
     }
     req.session.destroy(function(err) {
         if (err) throw err;
-        res.render('index', { title: 'Home', loginUser:'', msg: '' });
+        res.render('index', { title: 'Home', msg: '' });
     });
-    
+
 });
 
 
@@ -112,28 +112,27 @@ router.post('/login', [
             res.redirect('/adminpage');
         } else {
             var checkuser = userModule.findOne({ email_id: email });
-                checkuser.exec((err, data) => {
-                    if (err) throw err;
-                    if (data != null) {
-                        if (bcrypt.compareSync(password, data.password)) {
-                            req.session.user = email;
-                            res.redirect('/userpage');
-                        } else {
-                            res.render('login', { title: ' ', msg: 'Enter Correct Password', errors: errors.mapped(), user:'' });
+            checkuser.exec((err, data) => {
+                if (err) throw err;
+                if (data != null) {
+                    if (bcrypt.compareSync(password, data.password)) {
+                        req.session.user = email;
+                        res.redirect('/userpage');
+                    } else {
+                        res.render('login', { title: ' ', msg: 'Enter Correct Password', errors: errors.mapped(), user: '' });
 
-                        }
                     }
-                    else {
-                        res.render('login', { title: ' ', msg: 'E-mail not registered', errors: errors.mapped(), user: '' });
-                    }
-                });
-            } 
-
+                } else {
+                    res.render('login', { title: ' ', msg: 'E-mail not registered', errors: errors.mapped(), user: '' });
+                }
+            });
         }
-    
+
+    }
+
 });
 
-router.post('/departmentlogin',[
+router.post('/departmentlogin', [
     check('uname', '*Required').isString().isLength({ min: 1 }),
     check('uname', '*enter email').isEmail(),
     check('upass', '*Required').trim().isString().isLength({ min: 1 }),
@@ -158,19 +157,16 @@ router.post('/departmentlogin',[
                 if (bcrypt.compareSync(password, getPassword)) {
                     req.session.user = email;
                     res.redirect('/departmentpage');
+                } else {
+                    res.render('login', { title: 'Login', msg: 'Invalid password', errors: errors.mapped(), user: '' });
                 }
             } else {
-                res.render('login', { title: 'Login',msg: 'Invalid password and username', errors: errors.mapped(), user:'' });
+                res.render('login', { title: 'Login', msg: 'E-mail not registered', errors: errors.mapped(), user: '' });
             }
 
         });
     }
 });
-
-
-
-
-
 
 router.post('/adminlogin', function(req, res, next) {
     var email = req.body.uname;
@@ -178,32 +174,14 @@ router.post('/adminlogin', function(req, res, next) {
     var loginUser = req.session.user;
     if (loginUser == "ashkurkute@gmail.com") {
         res.redirect('/adminpage');
-
     }
-
     res.render('usersignup', { title: 'Registration', msg: '', errors: '', user: '' });
 
-
 });
-
-
 
 router.get('/usersignup', function(req, res, next) {
-
-
-
-
     res.render('usersignup', { title: 'Registration', msg: '', errors: '', user: '' });
-
-
 });
-
-
-
-
-
-
-
 
 router.post('/usersignup', checkEmail, [
     check('uname', '*Enter Your Name').isString().isLength({ min: 1 }),
@@ -265,7 +243,7 @@ router.post('/usersignup', checkEmail, [
         });
         userDetails.save((err, doc) => {
             if (err) throw err;
-            res.render('index', { title: 'home', loginUser: req.session.user, msg: 'Invalid password and username' });
+            res.render('index', { title: 'home', msg: ' ' });
         });
     }
 
@@ -274,7 +252,7 @@ router.post('/usersignup', checkEmail, [
 router.get('/departmentsignup', checkloginuser, function(req, res, next) {
     res.render('departmentsignup', { title: 'registration', msg: '', user: '', errors: '', ref: '' });
 });
-router.post('/departmentsignup', upload,checkEmailD, [
+router.post('/departmentsignup', upload, checkEmailD, [
     check('dname', '*Enter department name').isString().isLength({ min: 1 }),
     check('hname', '*Enter head of the department').isString().isLength({ min: 1 }),
     check('demail', '*Enter Valid E-Mail ID').isEmail(),
@@ -621,15 +599,11 @@ router.post('/search', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-    if (!req.session.user) {
-        res.render('login', { title: 'login', msg: '', errors: '' });
-    } else {
-        res.redirect('/');
-    }
+    res.render('login', { title: 'login', msg: '', errors: '', user: '' });
 });
 
 router.post('/back', function(req, res, next) {
-    res.redirect('adminpage');
+    res.redirect('/adminpage');
 
 });
 
