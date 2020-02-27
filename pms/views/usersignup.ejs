@@ -10,7 +10,7 @@
          #camp{
               border: 2px solid black;padding: 40px 40px;margin-left: 50px;margin-right: 50px; margin-top:20px; border-radius: 105px 27px 105px 27px;
                 height: fit-content;
-                width: fit-content;
+                width: 500px;
               }
           #user{
                  margin-top: 20px;
@@ -41,9 +41,9 @@
                   color: white;
                   text-align: center;
                 }
-                select {
+                select,input {
     padding: 8px;
-    width: 180px;
+    width: 300px;
     border-radius: 4px;
 
 }
@@ -69,7 +69,7 @@ input {
   <div class="container-fluid navigation">
     <div class="navbar-header">
       <img src="../images/logo.jpeg" class="rounded" alt="Cinque Terre" style="width: 10%;height:10%;">
-      <a class="navbar-brand " style="color:white; margin-left: 40px; font-weight:200;font-style: oblique;" href="#">Local Grievance Portal
+      <a class="navbar-brand " style="color:white; margin-left: 40px; font-weight:200;font-style: oblique;" href="#"><strong>Local Grievance Portal</strong>
       <h6 style=" color:rgb(18, 121, 14) ; font-style: italic;">Sound Your Complaint Louder | Team Jeevanpradaya</h6></a>
     </div>
     <ul class="nav nav-tab">
@@ -80,8 +80,8 @@ input {
 <marquee behavior="" direction="" style="margin-top: 100px;">After successful Registration go on 'Home'and log in to site for futher action .</marquee>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4 col-sm-4 col-xm-12"></div>
-    <div class="col-md-4 col-sm-4 col-xm-12">
+    <div class="col-md-3 col-sm-3 col-xm-12"></div>
+    <div class="col-md-7 col-sm-7 col-xm-12">
      <section id="user" >
       <form   id="camp" action="/usersignup" method="post" autocomplete="off">
         <!--Nextpage-->
@@ -162,7 +162,7 @@ input {
         <label>Select District:</label><br>
         <select name="dis" value="<%= user.dis%>">
         <option>....Select....</option>
-        <option>AMBEGAON</option>
+        <option>PUNE</option>
         <option>OTHER</option>
         </select>
         <% if(errors.dis){%>
@@ -244,16 +244,19 @@ input {
        </div>
        </div>
        </div>
+   
        <div class="footer">
         <span>Follow Us: </span>
-                         <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
-                         </a>
-                         <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
-                         </a>
-                         <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
-                         <a href="aboutus.html"><p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
-     </div>    <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p></a>
+        <a href="https://www.facebook.com/team.jeevanpradaya/ " target="_blank "><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+        </a>
+        <a href="https://twitter.com/jeevanpradaya?s=09" target="_blank "><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+        </a>
+        <a href="https://instagram.com/team_jeevanpradaya?igshid=1jqj5xv3a1yq9" target="_blank "><img src="../images/insta.png" alt="you tube " style="height:20px; width:20px; "> </img>
+            <a href="http://localgrievance.in:4000/aboutus">
+                <p style="color: white;">Designed by TEAM JEEVANPRADAYA &copy; 2020.</p>
+            </a>
     </div>
+ </div>
     <div class="container-fluid">
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>

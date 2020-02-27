@@ -1,6 +1,5 @@
 var express = require('express');
 var multer = require('multer');
-
 var path = require('path');
 var router = express.Router();
 var mongooseee = require('mongoose');
@@ -53,7 +52,19 @@ function checkEmail(req, res, next) {
     checkexitemail.exec((err, data) => {
         if (err) throw err;
         if (data) {
-            return res.render('index', { title: 'login', msg: 'Email already exists...' });
+            return res.render('index', { title: 'login', loginUser:'',msg: 'Email already exists...' });
+        }
+        next();
+    });
+}
+
+function checkEmailD(req, res, next) {
+    var email_id = req.body.email;
+    var checkexitemail = departmentModule.findOne({ email_id: email_id });
+    checkexitemail.exec((err, data) => {
+        if (err) throw err;
+        if (data) {
+            return res.render('index', { title: 'login', loginUser:'',msg: 'Email already exists...' });
         }
         next();
     });
@@ -63,9 +74,18 @@ function checkEmail(req, res, next) {
 
 
 
+
 router.get('/', function(req, res, next) {
     //  console.log(req.session.user);
-    res.render('index', { title: 'Home', loginUser: req.session.user, msg: '' });
+    if(!req.session.user){
+        res.render('index', { title: 'Home', loginUser:'', msg: '' });
+
+    }
+    req.session.destroy(function(err) {
+        if (err) throw err;
+        res.render('index', { title: 'Home', loginUser:'', msg: '' });
+    });
+    
 });
 
 
@@ -87,44 +107,33 @@ router.post('/login', [
         res.render('login', { title: ' ', msg: '', errors: errors.mapped(), user: user });
     } else {
         if (email == "ashkurkute@gmail.com" && password == "admin123") {
-
             req.session.user = email;
             console.log(req.session.user);
             res.redirect('/adminpage');
         } else {
             var checkuser = userModule.findOne({ email_id: email });
-
-            if (checkuser != null) {
-
                 checkuser.exec((err, data) => {
                     if (err) throw err;
                     if (data != null) {
                         if (bcrypt.compareSync(password, data.password)) {
                             req.session.user = email;
-
                             res.redirect('/userpage');
                         } else {
-                            res.redirect('/login');
-                        }
+                            res.render('login', { title: ' ', msg: 'Enter Correct Password', errors: errors.mapped(), user:'' });
 
+                        }
+                    }
+                    else {
+                        res.render('login', { title: ' ', msg: 'E-mail not registered', errors: errors.mapped(), user: '' });
                     }
                 });
-
-
-            } else {
-                res.redirect('/login');
-            }
-
-
-
-
-
+            } 
 
         }
-    }
+    
 });
 
-router.post('/departmentlogin', [
+router.post('/departmentlogin',[
     check('uname', '*Required').isString().isLength({ min: 1 }),
     check('uname', '*enter email').isEmail(),
     check('upass', '*Required').trim().isString().isLength({ min: 1 }),
@@ -144,20 +153,14 @@ router.post('/departmentlogin', [
 
         checkuser.exec((err, data) => {
             if (err) throw err;
-
-
             if (data != null) {
                 var getPassword = data.password;
                 if (bcrypt.compareSync(password, getPassword)) {
                     req.session.user = email;
                     res.redirect('/departmentpage');
-
-
                 }
-
             } else {
-                res.render('login', { title: 'home', msg: 'Invalid password and username' });
-
+                res.render('login', { title: 'Login',msg: 'Invalid password and username', errors: errors.mapped(), user:'' });
             }
 
         });
@@ -271,7 +274,7 @@ router.post('/usersignup', checkEmail, [
 router.get('/departmentsignup', checkloginuser, function(req, res, next) {
     res.render('departmentsignup', { title: 'registration', msg: '', user: '', errors: '', ref: '' });
 });
-router.post('/departmentsignup', upload, checkEmail, [
+router.post('/departmentsignup', upload,checkEmailD, [
     check('dname', '*Enter department name').isString().isLength({ min: 1 }),
     check('hname', '*Enter head of the department').isString().isLength({ min: 1 }),
     check('demail', '*Enter Valid E-Mail ID').isEmail(),
@@ -621,7 +624,7 @@ router.get('/login', function(req, res, next) {
     if (!req.session.user) {
         res.render('login', { title: 'login', msg: '', errors: '' });
     } else {
-        res.redirect('/index');
+        res.redirect('/');
     }
 });
 
@@ -636,7 +639,6 @@ router.get('/linked', function(req, res, next) {
         if (err) throw err;
         res.render('linked', { title: 'registration', records: doc });
     });
-
 });
 
 
