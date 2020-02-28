@@ -52,7 +52,7 @@ function checkEmail(req, res, next) {
     checkexitemail.exec((err, data) => {
         if (err) throw err;
         if (data) {
-            return res.render('index', { title: 'login', loginUser: '', msg: 'Email already exists...' });
+            return res.render('index', { title: 'home', msg: 'Email already exists...' });
         }
         next();
     });
@@ -64,33 +64,28 @@ function checkEmailD(req, res, next) {
     checkexitemail.exec((err, data) => {
         if (err) throw err;
         if (data) {
-            return res.render('index', { title: 'login', loginUser: '', msg: 'Email already exists...' });
+            return res.render('index', { title: 'home', msg: 'Email already exists...' });
         }
         next();
     });
 }
-
-
-
-
-
-
 router.get('/', function(req, res, next) {
-    //  console.log(req.session.user);
+
     if (!req.session.user) {
         res.render('index', { title: 'Home', msg: '' });
 
+    } else {
+        req.session.destroy(function(err) {
+            if (err) throw err;
+            res.render('index', { title: 'Home', msg: '' });
+        });
     }
-    req.session.destroy(function(err) {
-        if (err) throw err;
-        res.render('index', { title: 'Home', msg: '' });
-    });
 
 });
 
-
-
-
+router.get('/login', function(req, res, next) {
+    res.render('login', { title: 'login', msg: '', errors: '', user: '' });
+});
 
 router.post('/login', [
     check('uname', '*Required').isString().isLength({ min: 1 }),
@@ -99,7 +94,6 @@ router.post('/login', [
 ], function(req, res, next) {
     var email = req.body.uname;
     var password = req.body.upass;
-
     const errors = validationResult(req);
     console.log(errors.mapped());
     if (!errors.isEmpty()) {
@@ -120,7 +114,6 @@ router.post('/login', [
                         res.redirect('/userpage');
                     } else {
                         res.render('login', { title: ' ', msg: 'Enter Correct Password', errors: errors.mapped(), user: '' });
-
                     }
                 } else {
                     res.render('login', { title: ' ', msg: 'E-mail not registered', errors: errors.mapped(), user: '' });
@@ -140,7 +133,6 @@ router.post('/departmentlogin', [
 
     var email = req.body.uname;
     var password = req.body.upass;
-    //  var loginUser=req.session.user;
     const errors = validationResult(req);
     console.log(errors.mapped());
     if (!errors.isEmpty()) {
@@ -243,7 +235,7 @@ router.post('/usersignup', checkEmail, [
         });
         userDetails.save((err, doc) => {
             if (err) throw err;
-            res.render('index', { title: 'home', msg: ' ' });
+            res.redirect('/');
         });
     }
 
@@ -281,7 +273,7 @@ router.post('/departmentsignup', upload, checkEmailD, [
         var dphoneno = req.body.dphoneno;
         var description = req.body.desc;
         var dpassword = req.body.dpassword;
-        var dcpassword = req.body.dcpass;
+
         dpassword = bcrypt.hashSync(req.body.dpassword);
         var departDetails = new departmentModule({
             departname: departname,
@@ -347,7 +339,7 @@ router.get('/adminpage', checkloginuser, function(req, res, next) {
     var loginUser = req.session.user;
     // console.log(loginUser);
     if (loginUser != "ashkurkute@gmail.com") {
-        return res.redirect('/');
+        res.redirect('/');
     }
     var complaint = compModule.find({ status: "registered" });
     complaint.exec(function(err, doc) {
@@ -389,7 +381,7 @@ router.post('/delete/:id', function(req, res, next) {
     });
     status.exec(function(err, doc) {
 
-        res.redirect('adminpage');
+        res.redirect('/adminpage');
     });
 
 });
@@ -496,7 +488,7 @@ router.post('/success', function(req, res, next) {
 
 });
 router.post('/ok', function(req, res, next) {
-    res.redirect('status');
+    res.redirect('/status');
 
 });
 
@@ -596,10 +588,6 @@ router.post('/search', function(req, res, next) {
     });
 
 
-});
-
-router.get('/login', function(req, res, next) {
-    res.render('login', { title: 'login', msg: '', errors: '', user: '' });
 });
 
 router.post('/back', function(req, res, next) {
